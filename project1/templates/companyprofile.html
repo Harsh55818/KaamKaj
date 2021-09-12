@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Profile</h2>
+    <img src="{% static 'images/company.jpg' %}" alt="Avatar" style="width:100%">
+    <div class="container">
+        {% for items in results %}
+        <h4><b>Company Name: &nbsp;&nbsp;{{items.company_name}}</b></h4>
+        <p><b>Contact Number:</b>&nbsp;&nbsp;{{items.contact_number}}</p>
+        <p><b>Email Id:</b>&nbsp;&nbsp;{{items.email}}}</p>
+        <p><b>Password:</b>&nbsp;&nbsp;{{items.password}}</p>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

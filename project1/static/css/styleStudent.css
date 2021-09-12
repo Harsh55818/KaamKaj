@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+}
+.companyProfile{
+    display: flex;
+    justify-content: flex-end;
+}
+body{
+    background: #2a9d8f;
+    /* background-image: url(https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.sidebar{
+    background: #e9c46a;
+}
+.filterBtn{
+    background: #264653;
+    color: white;
+}
+.filterBtn:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+}
+.overflow{
+    height:300px;
+    overflow-y: scroll;
+    background: #264653;
+    display: flex;
+    justify-content: center;
+ 
+}
+.bannerContainer{
+   background: #264653;
+    display: flex;
+    justify-content: center;
+}
+.mainContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+h1{
+    font-size: x-large;
+    color: thistle;
+}
+h2{
+    font-size: large;
+}
+.collapse ul li a{
+    color: black;
+}

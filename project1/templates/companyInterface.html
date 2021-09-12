@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Company Interface</title>
+    <link rel="stylesheet" href="{% static 'css/styleCompany.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">AAKANKSHA</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="searchBtn btn btn-outline-dark" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="companyProfile">
+        <h1 id="profile">{{cname}}</h1>
+    </div>
+
+    <form class="mainForm">
+        <div class="row mb-4">
+            <label for="textarea" class="col-sm-3 col-form-label">Company Description:</label>
+            <div class="col-sm-7">
+                <textarea class="form-control" name="textarea" id="textarea" cols="5" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <label for="textarea" class="col-sm-3 col-form-label">Internship/Project Description:</label>
+            <div class="col-sm-7">
+                <textarea class="form-control" name="textarea" id="textarea0" cols="5" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <label class="d-flex justify-content-center" for="textarea1">Responsibilities</label>
+                <textarea class="form-control" name="textarea" id="textarea1" cols="5" rows="5"></textarea>
+            </div>
+            <div class="col-md-4">
+                <label class="d-flex justify-content-center" for="textarea2">Qualification/Skills</label>
+                <textarea class="form-control" name="textarea" id="textarea2" cols="5" rows="5"></textarea>
+            </div>
+            <div class="col-md-4">
+                <label class="d-flex justify-content-center" for="textarea3">Benefits/Perks</label>
+                <textarea class="form-control" name="textarea" id="textarea3" cols="5" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <label for="cost" class="col-sm-3 col-form-label">Company's project completion cost:</label>
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <div class="input-group-text">₹</div><input type="number" class="form-control" id="cost">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <label for="formFile" class="col-sm-3 col-form-label">Upload any project related document:</label>
+            <div class="col-sm-3">
+                <input class="form-control" type="file" id="formFile">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <label class="col-sm-3" for="startDate">Project Start Date:</label>
+            <div class="col-sm-3"><input class="form-control" type="text" id="startDate"></div>
+            <label class="col-sm-3" for="lastDate">Project Completion Date:</label>
+            <div class="col-sm-3"><input class="form-control" type="text" id="lastDate"></div>
+        </div>
+        </div>
+        <div class="row mb-4">
+            <label class="col-md-6" for="contactInfo">Company and employer any contact info, website, social media
+                link:</label>
+            <div class="col-sm-3"> <input class="form-control" type="text" id="cn"></div>
+            <div class="col-sm-3"> <input class="form-control" type="text" id="en"></div>
+        </div>
+        <div class="row mb-4">
+            <label class="col-sm-3" for="contactInfo">Feedback/Suggestion</label>
+            <div class="col-sm-3"> <input class="form-control" type="text" id="contactInfo"></div>
+        </div>
+        <div class="mb-5 col-md-12 d-flex justify-content-center">
+            <button class="submitBtn btn btn-success" id="sub">Submit/Post</button>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <span class="footer-text">©AAKANKSHA </span><br>
+                <a href="#"><img class="social-logo"
+                        src="https://www.iconsdb.com/icons/preview/white/facebook-5-xxl.png" alt=""></a>
+                <a href="#"><img class="social-logo" src="https://www.iconsdb.com/icons/preview/white/twitter-5-xxl.png"
+                        alt=""></a>
+                <a href="#"><img class="social-logo"
+                        src="https://www.iconsdb.com/icons/preview/white/instagram-5-xxl.png" alt=""></a>
+                <a href="#"><img class="social-logo" src="https://www.iconsdb.com/icons/preview/white/youtube-5-xxl.png"
+                        alt=""></a>
+                <a href="#"><img class="social-logo"
+                        src="https://www.iconsdb.com/icons/preview/white/linkedin-5-xxl.png" alt=""></a>
+            </div>
+        </footer>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
+
+<script>
+    $(document).on('click', '#profile', function(){
+        var mydata=document.getElementById('profile').innerHTML;
+        window.location = "profile";
+    })
+
+    $(document).on('click', '#sub', function(){
+        $company_name = document.getElementById('profile').innerHTML;
+        $company_description = $("#textarea").val();
+        $internship_description = $("#textarea0").val();
+        $responsibilities = $("#textarea1").val();
+        $qualification = $("#textarea2").val();
+        $benefits = $("#textarea3").val();
+        $cost = $("#cost").val();
+        $startdate = $("#startDate").val();
+        $lastdate = $("#lastDate").val();
+        $company_number = $("#cn").val();
+        $employee_number = $("#en").val();
+        $feedback = $("#contactInfo").val();
+
+        $.ajax({
+            url: "{% url 'poster' %}",
+            type: "POST",
+            data: {
+            company_name: $company_name,
+            company_description: $company_description,
+            internship_description: $internship_description,
+            responsibilities: $responsibilities,
+            qualification: $qualification,
+            benefits: $benefits,
+            cost: $cost,
+            startdate: $startdate,
+            lastdate: $lastdate,
+            company_number: $company_number,
+            employee_number: $employee_number,
+            feedback: $feedback,
+            },
+            success: function(data){
+                alert('Created!');
+            }
+        });
+    });
+
+</script>

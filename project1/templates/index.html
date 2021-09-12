@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SignUp and Login</title>
+	<link rel="stylesheet"  href="{% static 'css/index.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+ <img src="{% static 'images/logo.jpg' %}">
+    <div class="body">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form action="">
+	                <h1>Company</h1>
+	                <input type="text" placeholder="Company Name" id="company_name">
+	                <input type="number" placeholder="Contact Number" id="company_number">
+	                <input type="email" name="email" placeholder="Email" id="company_mail">
+	                <input type="password" name="password" placeholder="Password" id="company_pass">
+	                <button id="companysignup" type="button">SignUp</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+	            <form action="#">
+		            <h1>Login</h1>
+		            <br>
+	                <input type="email" name="email" placeholder="Email" id="cmail">
+	                <input type="password" name="password" placeholder="Password" id="cpass">
+	                <button id="companylogin" type="button">Login</button>
+	            </form>
+            </div>
+            <div class="overlay-container">
+	            <div class="overlay">
+		            <div class="overlay-panel overlay-left">
+			            <h1>Welcome Back!</h1>
+			            <p>To keep connected with us please login with your personal info</p>
+			            <button class="ghost" id="signIn">Login</button>
+		            </div>
+		            <div class="overlay-panel overlay-right">
+			            <h1>Company</h1>
+			            <p>Enter your details and start journey with us</p>
+			            <button class="ghost" id="signUp">Signup</button>
+		            </div>
+	            </div>
+            </div>
+        </div>
+
+        <div class="container2" id="container2">
+            <div class="form-container2 sign-up-container2">
+
+            <form action="">
+	            <h1>Student</h1>
+	            <input type="text" placeholder="Full Name" id="intern_name">
+	            <input type="number" placeholder="Contact Number" id="intern_number">
+	            <input type="email" name="email" placeholder="Email" id="intern_mail">
+	            <input type="password" name="password" placeholder="Password" id="intern_pass">
+	            <button id="internsignup">SignUp</button>
+            </form>
+        </div>
+        <div class="form-container2 sign-in-container2">
+	        <form action="#">
+		        <h1>Login</h1>
+		        <br>
+	            <input type="email" name="email" placeholder="Email" id="imail">
+	            <input type="password" name="password" placeholder="Password" id="ipass">
+	            <button id="internlogin">Login</button>
+	        </form>
+        </div>
+        <div class="overlay-container2">
+	        <div class="overlay2">
+		        <div class="overlay-panel2 overlay-left2">
+			        <h1>Welcome Back!</h1>
+			        <p>To keep connected with us please login with your personal info</p>
+			        <button class="ghost2" id="signIn2">Login</button>
+		        </div>
+		        <div class="overlay-panel2 overlay-right2">
+			        <h1>Intern</h1>
+			        <p>Enter your details and start journey with us</p>
+			        <button class="ghost2" id="signUp2">Signup</button>
+		        </div>
+	        </div>
+        </div>    
+    </div>
+	<footer>
+		<h3>&#169;AAKANKSHA</h3>
+		<a href="#" class="social"><i class="fa fa-facebook fa-1x"></i></a>
+		<a href="#" class="social"><i class="fa fa-google fa-1x"></i></a>
+		<a href="#" class="social"><i class="fa fa-linkedin fa-1x"></i></a>
+	</footer>
+</div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+</script>
+<script type="text/javascript">
+	const signUpButton2 = document.getElementById('signUp2');
+	const signInButton2 = document.getElementById('signIn2');
+	const container2 = document.getElementById('container2');
+
+	signUpButton2.addEventListener('click', () => {
+		container2.classList.add("right-panel-active2");
+	});
+	signInButton2.addEventListener('click', () => {
+		container2.classList.remove("right-panel-active2");
+	});
+</script>
+<script>
+
+		$(document).on('click', '#companysignup', function(){
+			$companyname = $('#company_name').val();
+            $companynumber = $('#company_number').val();
+            if ($companyname == "" || $companynumber == "") {
+                alert("Please complete the required field");
+            } else {
+                $companymail = $('#company_mail').val();
+                $companypass = $('#company_pass').val();
+                $.ajax({
+                    url: '{% url 'companysignup' %}',
+                    type: 'POST',
+                    data: {
+                        companyname: $companyname,
+                        companypass: $companypass,
+                        companynumber: $companynumber,
+                        companymail: $companymail,
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(data){
+                    	$('#company_name').val('');
+            			$('#company_number').val('');
+            			$('#company_mail').val('');
+                		$('#company_pass').val('');
+                        alert('Created!');
+                    }
+                });
+            }
+        });
+
+        $(document).on('click', '#companylogin', function(){
+        	$cmail = $("#cmail").val();
+        	$cpass = $("#cpass").val();
+        	if ($cmail== "" || $cpass == ""){
+        		alert("Please Fill all required Fields");
+        	}
+        	else{
+        		$.ajax({
+        			url: '{% url 'companylogin' %}',
+        			type: 'POST',
+        			data: {cmail: $cmail, cpass: $cpass},
+        			success: function(data){
+        					alert("Login Successfully!");
+							window.location = "company/" + data.name  ;
+        			}
+        		});
+        	}
+        });
+
+        $(document).on('click', '#internsignup', function(){
+			$internname = $('#intern_name').val();
+            $internnumber = $('#intern_number').val();
+            if ($internname == "" || $internnumber == "") {
+                alert("Please complete the required field");
+            } else {
+                $internmail = $('#intern_mail').val();
+                $internpass = $('#intern_pass').val();
+                $.ajax({
+                    url: '{% url 'internsignup' %}',
+                    type: 'POST',
+                    data: {
+                        internname: $internname,
+                        internpass: $internpass,
+                        internnumber: $internnumber,
+                        internmail: $internmail,
+                        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(data){
+                        alert('Created!');
+                    }
+                });
+            }
+        });
+
+        $(document).on('click', '#internlogin', function(){
+        	$imail = $("#imail").val();
+        	$ipass = $("#ipass").val();
+        	if ($imail== "" || $ipass == ""){
+        		alert("Please Fill all required Fields");
+        	}
+        	else{
+        		$.ajax({
+        			url: '{% url 'internlogin' %}',
+        			type: 'POST',
+        			data: {imail: $imail, ipass: $ipass},
+        			success: function(data){
+        					alert("Login Successfully!");
+							window.location = "intern/" + data.name  ;
+        			}
+        		});
+        	}
+        });
+</script>
+</body>
+</html>

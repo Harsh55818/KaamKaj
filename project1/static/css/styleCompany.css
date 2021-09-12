@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+}
+/* #navbarTogglerDemo03 ul li a{
+    color: white;
+} */
+/* .mainForm{
+   margin-top: 5rem;
+   margin-bottom: 5rem;
+   margin-left: 10rem;
+   margin-right: 10rem;
+    
+} */
+.mainForm{
+   
+    margin-top: 0;
+    padding: 5rem;
+    /* font-size: 15px; */
+}
+body{
+    background: #C197D2;
+    /* background-image: url(https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    background: #613659;
+}
+.footer{
+    margin: 0;
+    position:absolute;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #211522;
+    color: #f8f7f7;
+    text-align: center;
+    padding: 20px 50px;
+}
+.social-logo{
+    width: 30px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+.social-logo:hover{
+    transform: scale(1.5);
+    border-radius: 50%;
+
+}
+.footer-text{
+    padding: 50px 0px;
+
+}
+.submit{
+    margin-bottom: 30px;
+}
+.searchBtn{
+    background: #D3B1C2;
+}
+/* .submitBtn{
+    background: #57095f;
+    color: white;
+}
+.submitBtn:hover{
+    background: #eee9eb;
+    color: black;
+} */
+.companyProfile{
+    display: flex;
+    justify-content: flex-end;
+}
